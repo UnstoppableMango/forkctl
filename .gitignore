@@ -1,0 +1,6 @@
+/result*
+.envrc
+.direnv/
+_build/
+*.install
+.merlin
