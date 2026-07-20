@@ -6,7 +6,7 @@ Tooling to maintain a fleet of forked git repos: track relationship to upstream,
 
 Ideating.
 
-See [GOALS.md](GOALS.md) for full goals and design decisions.
+See [GOALS.md](GOALS.md) for full goals.
 
 ## Comparison
 
