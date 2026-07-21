@@ -2,6 +2,10 @@
 .envrc
 .direnv/
 _build/
+_opam/
 *.install
 .merlin
 .claude/*
+.vscode/*
+!.vscode/extensions.json
+dune.lock/
