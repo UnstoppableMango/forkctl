@@ -1,6 +1,7 @@
 {
   lib,
   buildDunePackage,
+  cmdliner,
   version,
 }:
 
@@ -9,6 +10,8 @@ buildDunePackage {
   inherit version;
 
   src = lib.cleanSource ../.;
+
+  buildInputs = [ cmdliner ];
 
   meta = {
     description = "Tooling to maintain a fleet of forked git repos";
