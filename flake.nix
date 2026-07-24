@@ -1,6 +1,10 @@
 {
   description = "An OCaml flake";
 
+  nixConfig = {
+    allow-import-from-derivation = false;
+  };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     systems.url = "github:nix-systems/triplet";
@@ -27,13 +31,16 @@
         let
           inherit (pkgs) ocamlPackages;
           version = "0.0.1";
-          package = ocamlPackages.callPackage ./nix { inherit version; };
+          forkctl = ocamlPackages.callPackage ./nix { inherit version; };
         in
         {
-          packages.default = package;
+          packages = {
+            inherit forkctl;
+            default = forkctl;
+          };
 
           devShells.default = pkgs.mkShell {
-            inputsFrom = [ package ];
+            inputsFrom = [ forkctl ];
             packages =
               (with pkgs; [
                 gnumake
