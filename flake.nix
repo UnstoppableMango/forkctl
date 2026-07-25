@@ -56,6 +56,7 @@
 
           treefmt.programs = {
             actionlint.enable = true;
+            mdformat.enable = true;
             nixfmt.enable = true;
             ocamlformat.enable = true;
           };

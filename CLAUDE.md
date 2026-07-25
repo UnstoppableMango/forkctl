@@ -11,8 +11,8 @@ version.
 ```bash
 nix build .#        # build
 nix flake update    # update flake inputs
-nix flake check     # lint (treefmt: actionlint, nixfmt, ocamlformat)
-nix fmt              # format
+nix flake check     # lint (treefmt: actionlint, mdformat, nixfmt, ocamlformat)
+nix fmt             # format
 ```
 
 Dev shell auto-loads via direnv (`.envrc` → `use flake`), providing
