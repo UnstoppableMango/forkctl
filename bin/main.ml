@@ -1,7 +1,9 @@
 open Cmdliner
 
 let status_cmd =
-  let doc = "Show the current repo's status relative to its upstream fork remote." in
+  let doc =
+    "Show the current repo's status relative to its upstream fork remote."
+  in
   Cmd.v (Cmd.info "status" ~doc) Term.(const Forkctl.Status.run $ const ())
 
 let version_cmd =
