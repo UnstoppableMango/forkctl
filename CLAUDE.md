@@ -13,6 +13,7 @@ nix build .#        # build
 nix flake update    # update flake inputs
 nix flake check     # lint (treefmt: actionlint, mdformat, nixfmt, ocamlformat)
 nix fmt             # format
+dune test           # run tests (Alcotest + qcheck), also runs via `nix build` doCheck
 ```
 
 Dev shell auto-loads via direnv (`.envrc` → `use flake`), providing
@@ -23,6 +24,8 @@ opam setup needed if direnv is allowed for the directory.
 
 - `bin/` — `forkctl` executable, currently just prints `Forkctl.version`
 - `lib/` — `forkctl` library, currently just `let version = "0.0.1"`
+- `test/` — Alcotest + qcheck tests (`test_forkctl.ml`); wired into `nix/default.nix`
+  `checkInputs`/`doCheck`, so `nix build` fails on test failure
 - `nix/default.nix` — `buildDunePackage` derivation used by `flake.nix`
 - Dune project (`dune-project`), package name `forkctl`
 
@@ -44,3 +47,5 @@ opam setup needed if direnv is allowed for the directory.
 
 - Goal #8 in GOALS.md: prefer wrapping an existing patch-stack tool (see
   README comparison table) over hand-rolling patch-stack logic from scratch.
+- `nix build` runs `dune runtest` (`doCheck = true`), so build fails on
+  broken test, not just compile error.
