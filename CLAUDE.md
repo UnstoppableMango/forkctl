@@ -40,6 +40,8 @@ opam setup needed if direnv is allowed for the directory.
   branch-pair DAG merge, stop-at-conflict (no best-effort across the rest of
   the stack), no central fleet manifest (forks discovered by scanning a
   directory), fork-maintenance only (no pushing patches upstream as PRs).
+- [docs/USE_CASES.md](docs/USE_CASES.md) — concrete scenarios extracted from
+  GOALS.md, meant to drive test suites.
 - [README.md](README.md) — tool-comparison table surveying existing
   patch-stack tools (quilt, StGit, TopGit, etc.).
 
