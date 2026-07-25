@@ -51,6 +51,8 @@
                 ocaml-lsp
                 ocamlformat
                 odoc
+                alcotest
+                qcheck-alcotest
               ]);
           };
 

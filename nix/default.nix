@@ -1,6 +1,8 @@
 {
   lib,
   buildDunePackage,
+  alcotest,
+  qcheck-alcotest,
   version,
 }:
 
@@ -9,6 +11,12 @@ buildDunePackage {
   inherit version;
 
   src = lib.cleanSource ../.;
+
+  checkInputs = [
+    alcotest
+    qcheck-alcotest
+  ];
+  doCheck = true;
 
   meta = {
     description = "Tooling to maintain a fleet of forked git repos";
