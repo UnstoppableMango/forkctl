@@ -1,0 +1,9 @@
+(executable
+ (name test_patch_stack_e2e)
+ (libraries unix alcotest))
+
+(rule
+ (alias e2e)
+ (deps test_patch_stack_e2e.exe ../../bin/main.exe)
+ (action
+  (run ./test_patch_stack_e2e.exe)))
