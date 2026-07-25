@@ -15,7 +15,7 @@ let version_cmd =
   Cmd.v (Cmd.info "version" ~doc) Term.(const run $ const ())
 
 let main_cmd =
-  let doc = "Tooling to maintain a fleet of forked git repos" in
+  let doc = "Tooling to maintain forked git repositories" in
   let info = Cmd.info "forkctl" ~version:Forkctl.Version.version ~doc in
   Cmd.group info [ status_cmd; version_cmd ]
 
