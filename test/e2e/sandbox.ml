@@ -57,7 +57,9 @@ let parents_of commit =
   String.split_on_char ' ' (String.trim out) |> List.filter (( <> ) "")
 
 let is_ancestor ~ancestor ~descendant =
-  let code, _, _ = git [ "merge-base"; "--is-ancestor"; ancestor; descendant ] in
+  let code, _, _ =
+    git [ "merge-base"; "--is-ancestor"; ancestor; descendant ]
+  in
   code = 0
 
 let current_branch () =

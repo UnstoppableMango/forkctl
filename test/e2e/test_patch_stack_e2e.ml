@@ -13,7 +13,8 @@ let test_new_patch_no_deps () =
         ".topdeps empty" (Some "")
         (Sandbox.show "t/foo:.topdeps");
       Alcotest.(check string)
-        "HEAD checked out onto topic" "t/foo" (Sandbox.current_branch ()))
+        "HEAD checked out onto topic" "t/foo"
+        (Sandbox.current_branch ()))
 
 let test_new_patch_with_dep () =
   Sandbox.with_repo (fun () ->
@@ -30,7 +31,8 @@ let test_new_patch_with_dep () =
       let base_bar = Option.get (Sandbox.rev_parse "refs/top-bases/bar") in
       let parents = Sandbox.parents_of base_bar in
       Alcotest.(check bool)
-        "base(bar) merges upstream" true (List.mem upstream parents);
+        "base(bar) merges upstream" true
+        (List.mem upstream parents);
       Alcotest.(check bool)
         "base(bar) merges t/foo" true (List.mem foo_tip parents);
       Alcotest.(check bool)
