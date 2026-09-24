@@ -1,5 +1,7 @@
 # forkctl
 
+[![Hercules CI](https://hercules-ci.com/api/v1/site/github/account/UnstoppableMango/project/forkctl/badge)](https://hercules-ci.com/github/UnstoppableMango/forkctl)
+
 Tooling to maintain a fleet of forked git repos: track relationship to upstream, sync new upstream commits, and replay a maintained patch set on top.
 
 ## Status
